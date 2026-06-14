@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Urbano Capital Group — Reduce Tus Impuestos Legalmente</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #C9A84C;
+      --gold-bright: #F5C800;
+      --gold-dark: #A07830;
+      --dark: #0D1A10;
+      --dark2: #122016;
+      --dark3: #1a2e1e;
+      --black: #080E09;
+      --white: #FFFFFF;
+      --gray: #111c14;
+      --gray-mid: #1e3022;
+      --text-mid: #8aab8e;
+      --radius: 4px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--white);
+      background: var(--dark);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      height: 68px;
+      background: rgba(13,26,16,0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--gray-mid);
+    }
+    .nav-logo {
+      font-size: 15px; font-weight: 700; letter-spacing: -0.3px;
+      color: var(--white); text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .nav-logo-icon {
+      width: 36px; height: 36px; background: var(--gold);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 900; color: var(--black);
+    }
+    .nav-cta {
+      background: var(--gold); color: var(--black);
+      padding: 10px 22px; border-radius: var(--radius);
+      font-size: 13px; font-weight: 700; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold-bright); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--dark);
+      display: flex; flex-direction: column;
+      justify-content: center; padding: 120px 5% 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 40%, rgba(201,168,76,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    /* Gold top accent line like the flyer */
+    .hero::after {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold-bright), var(--gold-dark));
+    }
+    .hero-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(52px, 9vw, 108px);
+      font-weight: 900;
+      line-height: 0.95;
+      letter-spacing: -2px;
+      color: var(--white);
+      max-width: 860px;
+      text-transform: uppercase;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .hero-sub {
+      margin-top: 28px;
+      font-size: clamp(15px, 1.8vw, 18px);
+      color: rgba(255,255,255,0.6);
+      max-width: 500px;
+      line-height: 1.65;
+    }
+    .hero-badges {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin-top: 36px;
+    }
+    .badge {
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.3);
+      color: var(--gold);
+      padding: 7px 14px; border-radius: 100px;
+      font-size: 12px; font-weight: 600;
+    }
+    .hero-actions {
+      display: flex; flex-wrap: wrap; gap: 14px;
+      margin-top: 44px;
+    }
+    .btn-primary {
+      background: var(--gold); color: var(--black);
+      padding: 16px 30px; border-radius: var(--radius);
+      font-size: 15px; font-weight: 700; text-decoration: none;
+      transition: transform 0.15s, background 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--gold-bright); transform: translateY(-1px); }
+    .btn-secondary {
+      background: transparent; color: var(--white);
+      padding: 16px 30px; border-radius: var(--radius);
+      font-size: 15px; font-weight: 700; text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.2);
+      transition: border-color 0.15s;
+      display: inline-block;
+    }
+    .btn-secondary:hover { border-color: rgba(255,255,255,0.6); }
+
+    /* ── SECTION COMMONS ── */
+    section { padding: 96px 5%; }
+    .section-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 900;
+      font-size: clamp(30px, 4.5vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -0.5px;
+      max-width: 680px;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+    .section-title em { font-style: normal; color: var(--gold); }
+
+    /* ── SPLIT (A QUIÉN AYUDAMOS) ── */
+    .split { background: var(--black); padding: 0; }
+    .split-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+    }
+    .split-card {
+      padding: 80px 6%;
+      position: relative; text-decoration: none; color: inherit;
+      transition: background 0.25s;
+      display: block;
+    }
+    .split-card:first-child {
+      background: var(--dark2);
+      border-right: 1px solid var(--gray-mid);
+    }
+    .split-card:first-child:hover { background: var(--dark3); }
+    .split-card:last-child {
+      background: var(--dark);
+    }
+    .split-card:last-child:hover { background: var(--dark3); }
+    .split-tag {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; margin-bottom: 20px;
+      color: var(--gold);
+    }
+    .split-card h2 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 900;
+      font-size: clamp(22px, 2.8vw, 32px);
+      line-height: 1.1;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+    .split-desc {
+      font-size: 15px; line-height: 1.65; max-width: 340px;
+      margin-bottom: 32px;
+      color: rgba(255,255,255,0.55);
+    }
+    .split-link {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 14px; font-weight: 700;
+      text-decoration: none;
+      color: var(--gold);
+    }
+    .split-link::after { content: '→'; transition: transform 0.2s; }
+    .split-card:hover .split-link::after { transform: translateX(4px); }
+    .split-highlight {
+      display: inline-block;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 3px;
+      padding: 4px 10px;
+      font-size: 12px; font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--gold);
+    }
+
+    /* ── CÓMO FUNCIONA (4 SECCIONES IRS) ── */
+    .how { background: var(--dark2); }
+    .irs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2px;
+      margin-top: 56px;
+      background: var(--gray-mid);
+      border: 2px solid var(--gray-mid);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .irs-card {
+      background: var(--dark);
+      padding: 40px 32px;
+    }
+    .irs-num {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .irs-card h3 {
+      font-family: 'Inter', sans-serif;
+      font-size: 18px; font-weight: 800;
+      margin-bottom: 12px; line-height: 1.2;
+      color: var(--white);
+      text-transform: uppercase;
+    }
+    .irs-card p {
+      font-size: 14px; line-height: 1.7;
+      color: rgba(255,255,255,0.5);
+    }
+    .irs-accent {
+      width: 32px; height: 3px;
+      background: var(--gold);
+      margin-bottom: 20px;
+      border-radius: 2px;
+    }
+
+    /* ── TESTIMONIOS ── */
+    .testimonials { background: var(--dark); }
+    .testi-header {
+      display: flex; align-items: flex-end;
+      justify-content: space-between; flex-wrap: wrap; gap: 16px;
+      margin-bottom: 52px;
+    }
+    .rating-block { text-align: right; }
+    .rating-num {
+      font-size: 48px; font-weight: 900;
+      line-height: 1; color: var(--white);
+    }
+    .stars { color: var(--gold); font-size: 18px; letter-spacing: 2px; }
+    .rating-label { font-size: 12px; color: var(--text-mid); margin-top: 4px; }
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .testi-card {
+      border: 1px solid var(--gray-mid);
+      background: var(--dark2);
+      border-radius: 8px;
+      padding: 32px;
+      position: relative;
+    }
+    .testi-card::before {
+      content: '"';
+      position: absolute; top: 20px; right: 28px;
+      font-family: 'Inter', sans-serif;
+      font-size: 72px; color: var(--gold);
+      line-height: 1; opacity: 0.25;
+    }
+    .testi-card .stars { font-size: 13px; margin-bottom: 16px; }
+    .testi-card p {
+      font-size: 15px; line-height: 1.7;
+      color: rgba(255,255,255,0.7); margin-bottom: 24px;
+    }
+    .testi-author {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .testi-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 14px; color: var(--black);
+      flex-shrink: 0;
+    }
+    .testi-name { font-weight: 700; font-size: 14px; color: var(--white); }
+    .testi-role { font-size: 12px; color: var(--text-mid); margin-top: 2px; }
+
+    /* ── CTA FINAL ── */
+    .cta-section {
+      background: var(--dark2);
+      text-align: center;
+      padding: 100px 5%;
+      border-top: 1px solid var(--gray-mid);
+    }
+    .cta-section .section-label { color: var(--gold); }
+    .cta-section h2 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 900;
+      font-size: clamp(32px, 5vw, 58px);
+      color: var(--white);
+      line-height: 1.0;
+      margin-bottom: 20px;
+      max-width: 700px;
+      margin-left: auto; margin-right: auto;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+    }
+    .cta-section h2 em { font-style: normal; color: var(--gold); }
+    .cta-section p {
+      color: rgba(255,255,255,0.5);
+      font-size: 17px; max-width: 480px;
+      margin: 0 auto 44px; line-height: 1.6;
+    }
+    .cta-buttons {
+      display: flex; flex-wrap: wrap; gap: 16px;
+      justify-content: center;
+    }
+    .btn-gold {
+      background: var(--gold); color: var(--black);
+      padding: 17px 32px; border-radius: var(--radius);
+      font-size: 15px; font-weight: 700; text-decoration: none;
+      transition: background 0.15s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-gold:hover { background: var(--gold-bright); transform: translateY(-1px); }
+    .btn-outline-white {
+      background: transparent; color: var(--white);
+      padding: 17px 32px; border-radius: var(--radius);
+      font-size: 15px; font-weight: 700; text-decoration: none;
+      border: 2px solid rgba(255,255,255,0.2);
+      transition: border-color 0.15s;
+      display: inline-block;
+    }
+    .btn-outline-white:hover { border-color: rgba(255,255,255,0.6); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      padding: 48px 5% 32px;
+      color: rgba(255,255,255,0.3);
+      border-top: 1px solid var(--gray-mid);
+    }
+    .footer-top {
+      display: flex; justify-content: space-between; flex-wrap: wrap;
+      gap: 24px; padding-bottom: 36px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      margin-bottom: 28px;
+    }
+    .footer-logo {
+      font-size: 15px; font-weight: 700;
+      color: var(--white); text-decoration: none;
+    }
+    .footer-links {
+      display: flex; gap: 24px; flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-size: 13px; color: rgba(255,255,255,0.35);
+      text-decoration: none; transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-legal {
+      font-size: 11px; line-height: 1.7;
+      max-width: 720px; color: rgba(255,255,255,0.2);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      .split-inner { grid-template-columns: 1fr; }
+      .split-card:first-child { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+      .testi-header { flex-direction: column; align-items: flex-start; }
+      .rating-block { text-align: left; }
+      nav { padding: 0 4%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">U</div>
+      Urbano Capital Group
+    </a>
+    <a href="https://heroesdefamilias.com/cita-CarlosUrbano-Heroe" target="_blank" class="nav-cta">Diagnóstico gratuito</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">Estrategia fiscal · Respaldada por el Código del IRS · Para S-Corp y C-Corp</p>
+    <h1>Deja de<br>Pagarle<br>al <em>IRS.</em></h1>
+    <p class="hero-sub">Ayudamos a dueños de negocios y contadores a reducir legalmente hasta 75% de sus impuestos con el Bono Ejecutivo — 100% legal, sin riesgo, con diagnóstico gratuito de 60 minutos.</p>
+    <div class="hero-badges">
+      <span class="badge">100% Legal</span>
+      <span class="badge">Código del IRS</span>
+      <span class="badge">Sin riesgo</span>
+      <span class="badge">Diagnóstico gratuito · 60 min</span>
+    </div>
+    <div class="hero-actions">
+      <a href="https://heroesdefamilias.com/cita-CarlosUrbano-Heroe" target="_blank" class="btn-primary">Quiero mi diagnóstico gratuito →</a>
+      <a href="#como-funciona" class="btn-secondary">¿Cómo funciona?</a>
+    </div>
+  </section>
+
+  <!-- A QUIÉN AYUDAMOS -->
+  <div class="split">
+    <div class="split-inner">
+
+      <a href="https://carlosurbano.bonoejecutivo.com/empresarios" target="_blank" class="split-card">
+        <p class="split-tag">Para dueños de negocio</p>
+        <h2>Tu empresa produce.<br>Tú deberías quedarte con más.</h2>
+        <p class="split-desc">Si tienes una S-Corp, C-Corp o LLC con más de $200K de facturación, estás pagando de más. El Bono Ejecutivo redirige esos impuestos hacia tu patrimonio personal.</p>
+        <div>
+          <div class="split-highlight">Diagnóstico gratuito · 60 minutos</div>
+        </div>
+        <br>
+        <span class="split-link">Ver estrategia para empresarios</span>
+      </a>
+
+      <a href="https://carlosurbano.bonoejecutivo.com/contadores" target="_blank" class="split-card">
+        <p class="split-tag">Para contadores y CPAs</p>
+        <h2>De presentar taxes a cambiar el patrimonio de tus clientes.</h2>
+        <p class="split-desc">El 96% de los CPAs no conoce el Bono Ejecutivo. Los que sí lo conocen se convierten en el asesor más valioso que su cliente ha tenido — y comisionan desde $5,000 por caso.</p>
+        <div>
+          <div class="split-highlight">Sesión estratégica gratuita · 45 minutos</div>
+        </div>
+        <br>
+        <span class="split-link">Ver estrategia para contadores</span>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- CÓMO FUNCIONA -->
+  <section class="how" id="como-funciona">
+    <p class="section-label">La estrategia</p>
+    <h2 class="section-title">Cuatro secciones del IRS.<br><em>Un solo resultado:</em> tu patrimonio.</h2>
+    <div class="irs-grid">
+      <div class="irs-card">
+        <p class="irs-num">SECCIÓN 162</p>
+        <div class="irs-accent"></div>
+        <h3>Compensación razonable</h3>
+        <p>Tu empresa deduce el bono al 100% como gasto de operación. El dueño pasa del 37% corporativo al 25% personal. Esa diferencia se queda en tu patrimonio.</p>
+      </div>
+      <div class="irs-card">
+        <p class="irs-num">SECCIÓN 7702</p>
+        <div class="irs-accent"></div>
+        <h3>Crecimiento libre de impuestos</h3>
+        <p>El capital entra a una IUL. Crece indexado al S&P 500 con piso garantizado. Sin importar lo que haga el mercado, tu dinero nunca retrocede.</p>
+      </div>
+      <div class="irs-card">
+        <p class="irs-num">SECCIÓN 72</p>
+        <div class="irs-accent"></div>
+        <h3>Acceso sin tributar</h3>
+        <p>Puedes tomar préstamos de tu póliza cuando quieras. Ese dinero no cuenta como ingreso bruto. Sin impuestos. Sin penalidades. Sin restricciones de uso.</p>
+      </div>
+      <div class="irs-card">
+        <p class="irs-num">SECCIÓN 101</p>
+        <div class="irs-accent"></div>
+        <h3>Legado 100% protegido</h3>
+        <p>Tu patrimonio pasa a tus beneficiarios libre de impuestos. Blindado de demandas, sucesiones y procesos legales. Así se construye riqueza generacional.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="testimonials">
+    <div class="testi-header">
+      <div>
+        <p class="section-label">Resultados reales</p>
+        <h2 class="section-title">Lo que dicen quienes<br>ya <em>lo implementaron.</em></h2>
+      </div>
+      <div class="rating-block">
+        <div class="rating-num">4.9</div>
+        <div class="stars">★★★★★</div>
+        <div class="rating-label">Basado en clientes reales</div>
+      </div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>No podía creer que esto era legal. En una reunión de 60 minutos me mostraron cómo reducir lo que le pago al IRS y poner ese dinero a trabajar para mí. Nadie me lo había explicado así en 12 años.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">MR</div>
+          <div>
+            <div class="testi-name">Miguel R.</div>
+            <div class="testi-role">Empresa de construcción · S-Corp · Florida</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>Mi contador nunca me habló de esto. Cuando le mostré la estrategia él mismo quedó impresionado. Llevamos 2 años con el bono ejecutivo y ya tengo más de $80,000 acumulados que antes se iban al IRS.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">CL</div>
+          <div>
+            <div class="testi-name">Carlos L.</div>
+            <div class="testi-role">Empresa de transporte · S-Corp · Texas</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>Lo que más me convenció fue ver los números con mi información real. No es teoría — es mi empresa, mis impuestos, mi retiro. El diagnóstico me abrió los ojos. Desearía haberlo sabido antes.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AP</div>
+          <div>
+            <div class="testi-name">Ana P.</div>
+            <div class="testi-role">Clínica dental · C-Corp · California</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-section">
+    <p class="section-label">¿Cuánto estás dejando sobre la mesa?</p>
+    <h2>¿Cuánto estás dejando<br>sobre la <em>mesa?</em></h2>
+    <p>Con tus números reales. Sin compromiso. Solo para S-Corp, C-Corp y LLC con facturación mayor a $200K/año.</p>
+    <div class="cta-buttons">
+      <a href="https://heroesdefamilias.com/cita-CarlosUrbano-Heroe" target="_blank" class="btn-gold">Soy dueño de negocio → Agendar diagnóstico</a>
+      <a href="https://carlosurbano.bonoejecutivo.com/contadores" target="_blank" class="btn-outline-white">Soy contador → Ver alianza</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <a href="#" class="footer-logo">Urbano Capital Group</a>
+      <nav class="footer-links">
+        <a href="https://carlosurbano.bonoejecutivo.com/empresarios" target="_blank">Para Empresarios</a>
+        <a href="https://carlosurbano.bonoejecutivo.com/contadores" target="_blank">Para Contadores</a>
+        <a href="https://heroesdefamilias.com/cita-CarlosUrbano-Heroe" target="_blank">Agendar Cita</a>
+      </nav>
+    </div>
+    <p class="footer-legal">
+      Esta página es de carácter educativo e informativo. El Bono Ejecutivo es una estrategia financiera legal amparada en el Código de Comercio del IRS. Las proyecciones presentadas se basan en rendimientos históricos del S&P 500 y no garantizan resultados futuros. Cada situación fiscal es diferente. Consulte a su asesor financiero y contador antes de implementar cualquier estrategia. Esta página no es parte de Facebook ni está respaldada por Meta Platforms Inc. © 2026 Urbano Capital Group · bonoejecutivo.com
+    </p>
+  </footer>
+
+</body>
+</html>
